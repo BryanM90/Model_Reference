@@ -1,0 +1,31 @@
+% Reference Model for MRAC
+% NA 583
+% University of Michigan - Fall 2016
+
+% Model parameters
+Ms  = 250;      % [kg]
+Mus = 30;       % [kg]
+K1  = 15000;    % [N/m]
+K2  = 150000;   % [N/m]
+Bm  = 1000;     % [N/m/s]
+
+% State Space representation
+A = [    0      1      0        0
+      -K2/Mus   0    K1/Mus     0
+         0     -1      0        1
+         0      0   -K1/Ms   -Bm/Ms ];
+B = [-1 0 0 0]';
+C = [0 0 1 0        % y(1) = Suspension stroke
+     0 0 0 1];
+D = [0;0];
+
+sys = ss(A,B,C,D);
+
+% Simulation
+t = 0:0.01:10;
+z = lsim(sys,sin(t),t);
+% Plot
+figure;hold on
+plot(t,sin(t))
+plot(t,z(:,1))
+plot(t,z(:,2))
