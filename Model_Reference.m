@@ -2,6 +2,8 @@
 % NA 583
 % University of Michigan - Fall 2016
 
+% FAnny was here
+
 % Model parameters
 Ms  = 355;      % [kg]
 Mus = 30;       % [kg]
