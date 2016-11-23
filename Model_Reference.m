@@ -2,7 +2,9 @@
 % NA 583
 % University of Michigan - Fall 2016
 
-% FAnny was here
+% Fanny was here
+% Bryan was here
+
 
 % Model parameters
 Ms  = 355;      % [kg]
